@@ -1,14 +1,15 @@
-/* Test for console print
-console.log('Hello World!') */
-
 //app controls the application lifecycle - a camelCase module
 // BrowserWindow creates and manages app windows - a PascalCade module
 const {app, BrowserWindow} = require('electron')
+const path = require('node:path')
 
 const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
-        height: 600
+        height: 600,
+        webPreferences: {
+            preload: path.join(__dirname,'preload.js')
+        }
     })
 
     win.loadFile('index.html')
@@ -18,10 +19,18 @@ const createWindow = () => {
 
 app.whenReady().then(()=> {
     createWindow()
+
+    app.on('activate', () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow()
+        }
+    })
 })
 
 // Call to close app if all windows are closed and not on macOS
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit()
+    if (process.platform !== 'darwin') {
+        app.quit()
+    } 
 })
 
