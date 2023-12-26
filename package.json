@@ -1,0 +1,22 @@
+{
+  "name": "electron_tutorial_proj",
+  "version": "1.0.0",
+  "description": "electron tutorial project",
+  "main": "(main.js)",
+  "scripts": {
+    "test": "echo \"EError: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feldenserra/electron_tut.git"
+  },
+  "keywords": [
+    "n.a"
+  ],
+  "author": "felden",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/feldenserra/electron_tut/issues"
+  },
+  "homepage": "https://github.com/feldenserra/electron_tut#readme"
+}
