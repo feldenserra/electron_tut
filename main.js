@@ -20,3 +20,8 @@ app.whenReady().then(()=> {
     createWindow()
 })
 
+// Call to close app if all windows are closed and not on macOS
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') app.quit()
+})
+
