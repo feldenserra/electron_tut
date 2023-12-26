@@ -2,8 +2,9 @@
   "name": "electron_tutorial_proj",
   "version": "1.0.0",
   "description": "electron tutorial project",
-  "main": "(main.js)",
+  "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"EError: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/feldenserra/electron_tut/issues"
   },
-  "homepage": "https://github.com/feldenserra/electron_tut#readme"
+  "homepage": "https://github.com/feldenserra/electron_tut#readme",
+  "devDependencies": {
+    "electron": "^28.1.0"
+  }
 }
